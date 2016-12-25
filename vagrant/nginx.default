@@ -2,7 +2,7 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        root /var/www/lightning;
+        root /var/www/demo;
 
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
@@ -17,7 +17,7 @@ server {
             include        fastcgi_params;
             fastcgi_param  QUERY_STRING     request=$uri&$query_string;
             fastcgi_param  SCRIPT_FILENAME  $document_root/index.php;
-            fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
+            fastcgi_pass   unix:/var/run/php5-fpm.sock;
         }
 
         location ~ /(docs/|audio/|css/|fonts/|img/|images/|js/|flash/|favicon\.(png|ico)|crossdomain\.xml|BingSiteAuth\.xml) {
@@ -29,7 +29,7 @@ server {
             include        fastcgi_params;
             fastcgi_param  QUERY_STRING     request=$uri&$query_string;
             fastcgi_param  SCRIPT_FILENAME  $document_root/index.php;
-            fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
+            fastcgi_pass   unix:/var/run/php5-fpm.sock;
         }
 }
 
