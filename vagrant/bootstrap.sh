@@ -3,7 +3,7 @@
 echo "mysql-server mysql-server/root_password password password" | sudo debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password password" | sudo debconf-set-selections
 apt-get update
-apt-get install -y nginx php5-fpm mysql-server git php5-mcrypt php5-mysql
+apt-get install -y nginx php5-fpm mysql-server git php5-mcrypt php5-mysql php5-tidy
 
 cd /var/www/demo
 git submodule update --init Lightning
